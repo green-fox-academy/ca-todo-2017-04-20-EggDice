@@ -12,4 +12,11 @@ public class TodoApp {
            " -r   Removes an task\n" +
            " -c   Completes an task";
   }
+
+  public String run(String[] args) {
+    if (args.length > 0) {
+      return "No todos for today! :)";
+    }
+    return runUsage();
+  }
 }
