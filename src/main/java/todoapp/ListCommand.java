@@ -5,7 +5,7 @@ package todoapp;
  */
 public class ListCommand extends Command {
   ListCommand() {
-    super("l");
+    super("l", "Lists all the tasks");
   }
 
   public String execute() {

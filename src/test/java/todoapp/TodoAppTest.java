@@ -15,7 +15,7 @@ public class TodoAppTest {
                   " -l   Lists all the tasks\n" +
                   " -a   Adds a new task\n" +
                   " -r   Removes an task\n" +
-                  " -c   Completes an task";
+                  " -c   Completes an task\n";
   @Test
   public void returnUsage() {
     TodoApp app = new TodoApp();
