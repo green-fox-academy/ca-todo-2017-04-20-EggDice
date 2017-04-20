@@ -1,8 +1,19 @@
 package todoapp;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by eggdice on 4/20/17.
  */
 public class TodoApp {
+  List<Command> commands;
+
+  public TodoApp() {
+    commands = new ArrayList<Command>();
+    commands.add(new ListCommand());
+  }
+
   public String runUsage() {
     return "Python Todo application\n" +
            "=======================\n" +
@@ -14,9 +25,14 @@ public class TodoApp {
   }
 
   public String run(String[] args) {
-    if (args.length > 0) {
-      return "No todos for today! :)";
+    if (args.length == 0) {
+      return runUsage();
     }
-    return runUsage();
+    for (Command command : commands) {
+      if (("-" + command.getFlag()).equals(args[0])) {
+        return command.execute();
+      }
+    }
+    return "";
   }
 }
